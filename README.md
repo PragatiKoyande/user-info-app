@@ -63,10 +63,15 @@ and apply:
 
 kubectl apply -f configmap.yaml
 Kubernetes accepts the change, but existing Pods or Jobs do not automatically see it.
+
 Why?
+
 When a Pod starts, it reads the ConfigMap values at creation time and injects them as environment variables (or mounts them as files).
+
 These values are snapshotted into the Pod spec — they do not dynamically update unless:
+
 The Pod is restarted, or
+
 The application is watching the mounted ConfigMap file and re-reads it (some apps do, but Python scripts like ours do not).
 
 Demonstration
