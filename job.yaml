@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: user-info-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: user-info
+        image: pragatikoyande/user-info-appv1:latest
+        args:
+          - "--first_name"
+          - "$(FIRST_NAME)"
+          - "--last_name"
+          - "$(LAST_NAME)"
+          - "--street"
+          - "$(STREET)"
+          - "--city"
+          - "$(CITY)"
+          - "--state"
+          - "$(STATE)"
+        envFrom:
+          - configMapRef:
+              name: user-config
+          - secretRef:
+              name: user-secret
+      restartPolicy: Never
+  backoffLimit: 2
