@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user-config
+data:
+  FIRST_NAME: Pragati
+  LAST_NAME: Koyande
+  STREET: 123 MG Road
+  CITY: Pune
+  STATE: Maharashtra
