@@ -1,6 +1,6 @@
 # user-info-app
 
-Install minikube  to serve as a K8S cluster.
+Install minikube  to serve as a K8S cluster
 https://github.com/amolshete/Minikube-Installation
 
 Create some python code that accepts the following parameters:
